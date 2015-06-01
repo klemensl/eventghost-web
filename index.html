@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+	
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div data-page="index" class="navbar-inner">
+			<div class="center sliding">Beleuchtung & Kameras</div>
+			<div class="right"><span id="loading-image" class="preloader"></span></div>
+          </div>
+          <div data-page="untergeschoss" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Untergeschoss</div>
+			<div class="right"><span id="loading-image" class="preloader"></span></div>
+          </div>
+          <div data-page="obergeschoss" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Obergeschoss</div>
+			<div class="right"><span id="loading-image" class="preloader"></span></div>
+          </div>
+          <div data-page="aussen" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Aussen</div>
+			<div class="right"><span id="loading-image" class="preloader"></span></div>
+          </div>
+          <!--<div data-page="kameras" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Kameras</div>
+			<div class="right"><span id="loading-image" class="preloader"></span></div>
+          </div>-->
+          <div data-page="tuerglocke" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Türglocke</div>
+			<div class="right"><span id="loading-image" class="preloader"></span></div>
+          </div>
+        </div>
+		
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Index Page-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content pull-to-refresh-content">
+			  <div class="pull-to-refresh-layer">
+				<div class="preloader"></div>
+				<div class="pull-to-refresh-arrow"></div>
+			  </div>
+		
+			  <div id="eingeschaltet" class="content-block">
+				<div class="content-block-title">Eingeschaltet</div>
+				<div class="list-block" style="margin-left:-15px;margin-right:-15px">
+					<ul id="eingeschaltet">
+						<!--<li>
+						  <div class="item-content">
+							<div class="item-inner">
+							  <div class="item-input label">...</div>
+							  <div class="item-input">	
+								<p ise_id="1271" style="margin-top:0.5em;margin-bottom:0.5em">
+								  <a href="#" value="false" class="button" onClick="TriggerEvent(this, 'EG-Gang-Aus')">AUS</a>
+								</p>
+							  </div>
+							</div>
+						  </div>
+						</li>-->
+					</ul>
+				</div>
+			  </div>
+			  <!-- Innen-Geschosse -->
+              <div class="list-block">
+                <ul>
+                  <li>
+					<a href="#untergeschoss" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">Untergeschoss</div>
+                        </div>
+                      </div>
+					</a>
+				  </li>
+				  
+                  <li>
+					<a href="#obergeschoss" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">Obergeschoss</div>
+                        </div>
+                      </div>
+					</a>
+				  </li>
+				  
+                  <li>
+					<a href="#aussen" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">Aussen</div>
+                        </div>
+                      </div>
+					</a>
+				  </li>
+                </ul>
+              </div>
+			  
+			  <!-- Kameras -->
+			  <div class="list-block">
+				<div class="content-block-title">Kameras</div>
+					<ul>
+					  <li>
+						<a href="kameras.html" class="item-link">
+						  <div class="item-content">
+							<div class="item-inner">
+							  <div class="item-title">Kameras</div>
+							</div>
+						  </div>
+						</a>
+					  </li>
+					</ul>
+			  </div>
+			  
+			  <!-- Charts -->
+			  <div class="list-block">
+				<div class="content-block-title">Charts</div>
+					<ul>
+					  <li>
+						<a href="charts.html" class="item-link">
+						  <div class="item-content">
+							<div class="item-inner">
+							  <div class="item-title">Charts</div>
+							</div>
+						  </div>
+						</a>
+					  </li>
+					</ul>
+			  </div>
+			  
+			  <!-- Allgemein -->
+			  <div class="list-block">
+				<div class="content-block-title">Allgemein</div>
+					<ul>
+					  <li>
+						<a href="#tuerglocke" class="item-link">
+						  <div class="item-content">
+							<div class="item-inner">
+							  <div class="item-title">Türglocke</div>
+							</div>
+						  </div>
+						</a>
+					  </li>
+					</ul>
+			  </div>
+            </div>
+          </div>
+		  
+          <!-- Untergeschoss Page-->
+          <div data-page="untergeschoss" class="page cached">
+			<!-- Scrollable page content-->
+			<div class="page-content">
+			  <div class="content-block">
+				<div class="content-block-title">Gang</div>
+				<div class="content-block-inner">
+					<p class="buttons-row" ise_id="1271">
+						<a href="#" class="button" value="true" event="EG-Gang-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" event="EG-Gang-Aus" onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				</div>
+				<div class="content-block-title">Stiege</div>
+				<div class="content-block-inner">
+					<p class="buttons-row" ise_id="1265">
+						<a href="#" class="button" value="true" event="EG-Stiege-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" event="EG-Stiege-Aus" onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				</div>
+			  </div>
+			</div>
+          </div>
+		  
+          <!-- Obergeschoss Page-->
+          <div data-page="obergeschoss" class="page cached">
+			<div class="page-content">
+			  <div class="content-block">
+				<div class="content-block-title">Ambient</div>
+				<div class="content-block-inner">
+					<p class="buttons-row" egvariable="OG-Ambient">
+						<a href="#" class="button" value="true" system="FS20" event="OG-Ambient-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" system="FS20" event="OG-Ambient-Aus" onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				</div>
+				
+				<div class="content-block-title">Küche</div>
+				<div class="content-block-inner">
+					<p class="buttons-row" ise_id="1896">
+						<a href="#" class="button" value="true" system="homematic" event="OG-Kueche-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" system="homematic" event="OG-Kueche-Aus" onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				</div>
+				
+				<div class="content-block-title">Küche-Ambient</div>
+				<div class="content-block-inner">
+					<p class="buttons-row" ise_id="1902">
+						<a href="#" class="button" value="true" system="homematic" event="OG-KuecheAmbient-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" system="homematic" event="OG-KuecheAmbient-Aus" onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				</div>
+				
+				<div class="content-block-title">Essen</div>
+				<div class="content-block-inner">
+					<p class="buttons-row" ise_id="1845">
+						<a href="#" class="button" value="true" system="homematic" event="OG-Essen-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" system="homematic" event="OG-Essen-Aus" onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				</div>
+				
+				<div class="content-block-title">Rollo-Küche</div>
+				<div class="content-block-inner">
+					<p class="buttons-row" ise_id="1810">
+						<a href="#" class="button" value="0.000000" system="homematic" event="OG-Kueche-0" onClick="TriggerEvent(this)">0</a>
+						<a href="#" class="button" value="0.250000" system="homematic" event="OG-Kueche-25" onClick="TriggerEvent(this)">25</a>
+						<a href="#" class="button" value="0.500000" system="homematic" event="OG-Kueche-50" onClick="TriggerEvent(this)">50</a>
+						<a href="#" class="button" value="1.000000" system="homematic" event="OG-Kueche-100" onClick="TriggerEvent(this)">100</a>
+					</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  
+          <!-- Aussen Page-->
+          <div data-page="aussen" class="page cached">
+		    <div class="page-content">
+				<div class="content-block">
+				  <div class="content-block-title">Balkon</div>
+				  <div class="content-block-inner">
+					<p class="buttons-row" ise_id="1851">
+						<a href="#" class="button" value="true" system="homematic" event="Aussen-Balkon-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" system="homematic" event="Aussen-Balkon-Aus"  onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				  </div>
+				  
+				  <div class="content-block-title">Haus Beleuchtung</div>
+				  <div class="content-block-inner">
+					<p class="buttons-row" egvariable="Aussen-Haus">
+						<a href="#" class="button" value="true" system="FS20" event="Aussen-Haus-Ein" onClick="TriggerEvent(this)">EIN</a>
+						<a href="#" class="button" value="false" system="FS20" event="Aussen-Haus-Aus"  onClick="TriggerEvent(this)">AUS</a>
+					</p>
+				  </div>
+				</div>
+			</div>
+		  </div>
+		  
+          <!-- Tuerglocke Page-->
+          <div data-page="tuerglocke" class="page cached">
+		    <div class="page-content">
+			  <div class="content-block">
+				<div class="content-block-title">Türglocke <!--(<span id="Tuerglocke">{{eg.globals.tuerklingelstatus}}</span>)--></div>
+				<div class="content-block-inner">
+					<a href="#" class="button button-fill" system="FS20" event="Tuerglocke" onClick="TriggerEvent(this)">Klingeln</a>
+					<p class="buttons-row" egvariable="Tuerglocke">
+						<a href="#" class="button" value="true" system="FS20" event="Tuerglocke-Ein" onClick="TriggerEvent(this)">Ein</a>
+						<a href="#" class="button" value="false" system="FS20" event="Tuerglocke-Aus" onClick="TriggerEvent(this)">Aus</a>
+					</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+        </div>
+      </div>
+    </div>
+	
+	
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/ChartNew.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+		function updateSite(event) {
+			window.location.reload(true);
+		}
+		window.applicationCache.addEventListener('updateready', updateSite, false);
+		
+		
+		$(document).ready(function() {
+			$('div#eingeschaltet').hide();
+			UpdateAllButtonStates();
+		});
+		
+		function AddOrRemoveEingeschaltetFromIndex(id, deviceName, eventName, actualValue, system) {
+			if (actualValue == 'true') {
+				if ($('ul#eingeschaltet').find("li#" + id).length == 0) {
+					if (system == 'fs20') {
+						var systemID = 'egvariable="' + id + '"';
+					} else {
+						var systemID = 'ise_id="' + id + '"';
+					}
+					$('ul#eingeschaltet').append('<li id="' + id + '"><div class="item-content"><div class="item-inner"><div class="item-input label">' + deviceName + '</div><div class="item-input"><p ' + systemID + ' style="margin-top:0.5em;margin-bottom:0.5em"><a href="#" value="false" system="' + system + '" class="button" event="' + eventName + '"onClick="TriggerEvent(this)">AUS</a></p></div></div></div></li>').hide().fadeIn();
+					$('div#eingeschaltet').fadeIn();
+				}
+			} else if (actualValue == 'false') {
+				$('ul#eingeschaltet').find("li#" + id).fadeOut("normal", function() {
+					$(this).remove();
+					
+					if ($('ul#eingeschaltet').children().length == 0) {
+						$('div#eingeschaltet').fadeOut();
+					}
+				});
+			}
+		}
+
+		function UpdateAllButtonStates() {
+			$("div.navbar-on-center").find("#loading-image").css('visibility','visible');
+			
+			$.ajax({url: "variables.html?CCU2statelist", success: function(result) {				
+				var fs20Variables = $(result).find("div[system='fs20']");
+				$.each(fs20Variables, function(index, fs20Variable) {
+					var fs20VariableName = fs20Variable.getAttribute('id');
+					var fs20VariableValue = fs20Variable.textContent;
+					
+					var buttonParent = $("p[egvariable='" + fs20VariableName + "']");
+					buttonParent.children().removeClass("button-fill");
+					buttonParent.children("a[value='" + fs20VariableValue + "']").addClass("button-fill");
+					
+					var deviceName = buttonParent.parent().prev().text();
+					var eventName = buttonParent.children("a[value='false']").attr('event');
+					AddOrRemoveEingeschaltetFromIndex(fs20VariableName, deviceName, eventName, fs20VariableValue, 'fs20');
+					/*if (fs20VariableValue == 'true') {
+						if ($('ul#eingeschaltet').find("li#" + fs20VariableName).length == 0) {
+							$('ul#eingeschaltet').append('<li id="' + fs20VariableName + '"><div class="item-content"><div class="item-inner"><div class="item-input label">' + deviceName + '</div><div class="item-input"><p egvariable="' + fs20VariableValue + '" style="margin-top:0.5em;margin-bottom:0.5em"><a href="#" value="false" class="button" event="' + eventName + '"onClick="TriggerEvent(this)">AUS</a></p></div></div></div></li>').hide().fadeIn();
+							$('div#eingeschaltet').fadeIn();
+						}
+					} else if (fs20VariableValue == 'false') {
+						$('ul#eingeschaltet').find("li#" + fs20VariableName).fadeOut("normal", function() {
+							$(this).remove();
+							
+							if ($('ul#eingeschaltet').children().length == 0) {
+								$('div#eingeschaltet').fadeOut();
+							}
+						});
+					}*/
+				});
+				
+				var datapoints = $(result).find('datapoint[type="STATE"], datapoint[type="LEVEL"][valuetype="4"]');
+				$.each(datapoints, function(index, datapoint) {
+					var datapointID = datapoint.getAttribute('ise_id');
+					var datapointValue = datapoint.getAttribute('value');
+					var deviceName = datapoint.parentNode.getAttribute('name');
+					
+					var buttonParent = $("p[ise_id='" + datapointID + "']");
+					buttonParent.parent().prev().text(deviceName);
+					
+					var activeElement = buttonParent.children("a[class~='color-gray']");
+					var currentValueElement = buttonParent.children("a[value='" + datapointValue + "']");
+					
+					if ((activeElement.length == 0) || (activeElement == currentValueElement)) {
+						buttonParent.children().removeClass('button-fill');
+						buttonParent.children().removeClass('color-gray');
+						buttonParent.children("a[value='" + datapointValue + "']").addClass('button-fill');
+					}
+					
+					var eventName = buttonParent.children("a[value='false']").attr('event');
+					AddOrRemoveEingeschaltetFromIndex(datapointID, deviceName, eventName, datapointValue, 'homematic');
+					/*if (datapointValue == 'true') {
+						var eventName = buttonParent.children("a[value='false']").attr('event');
+						if ($('ul#eingeschaltet').find("li#" + datapointID).length == 0) {
+							$('ul#eingeschaltet').append('<li id="' + datapointID + '"><div class="item-content"><div class="item-inner"><div class="item-input label">' + deviceName + '</div><div class="item-input">	<p ise_id="' + datapointID + '" style="margin-top:0.5em;margin-bottom:0.5em"><a href="#" value="false" class="button" event="' + eventName + '"onClick="TriggerEvent(this)">AUS</a></p></div></div></div></li>').hide().fadeIn();
+							$('div#eingeschaltet').fadeIn();
+						}
+					} else if (datapointValue == 'false') {
+						$('ul#eingeschaltet').find("li#" + datapointID).fadeOut("normal", function() {
+							$(this).remove();
+							
+							if ($('ul#eingeschaltet').children().length == 0) {
+								$('div#eingeschaltet').fadeOut();
+							}
+						});
+					}*/
+				});
+					
+				$('#loading-image').css('visibility','hidden');
+				$("div.navbar-on-center").find('#loading-image').css('visibility','hidden');
+			}});
+		}
+
+		function TriggerEvent(element) {
+			$("div.navbar-on-center").find("#loading-image").css('visibility', 'visible');
+			$(element).parent().children().removeClass('button-fill');
+			$(element).addClass('color-gray');
+			$(element).addClass('button-fill');
+			
+			var eventName = $(element).attr('event');
+			var eventPayload = 'None';
+			/*if (element.checked != undefined) {
+				eventName = eventName + (element.checked == true ? "-Ein" : "-Aus");
+			}
+			if (eventPayload == undefined) {
+				eventPayload = "None";
+			}*/
+
+			$.ajax({url: "variables.html?" + eventName + "&" + eventPayload, success: function(result) {
+				/*if (spanID != undefined) {
+					var spanElement = $('span#' + spanID);
+					if (spanElement != undefined) {
+						spanElement.html($(result).find('#' + spanID).html());
+					}
+				}*/
+				
+				var system = $(element).attr('system');
+				if (system == undefined) {
+					system = 'homematic';
+				}
+				system = system.toLowerCase();
+				if (system == 'homematic') {
+					var actualValue = $(result).find('#CCU2StateChangedTo').html();
+				} else if (system == 'fs20') {
+					var egVariable = $(element).parent().attr('egvariable');
+					var actualValue = $(result).find('#' + egVariable).html();
+				} else {
+					var actualValue = "NotSet";
+				}
+				
+				$(element).parent().children("a[value='" + actualValue + "']").addClass('button-fill');
+				$(element).parent().children("a[value='" + actualValue + "']").removeClass('color-gray');
+				
+				var expectedValue = element.checked != undefined ? element.checked + "" : $(element).attr('value');
+				if ($.isNumeric(expectedValue)) {
+					
+				} else if (actualValue != expectedValue) {
+					myApp.alert('Aktion konnte nicht durchgeführt werden, wahrscheinlich ist der Empfang gestört', 'ACHTUNG!');
+				}
+				
+				if (actualValue == "false") {
+					var datapointID = $(element).parent().attr('ise_id');
+					if ((datapointID != undefined) && ($('ul#eingeschaltet').find('li#' + datapointID).length == 1)) {
+						$('ul#eingeschaltet').remove('li#' + datapointID);
+					}
+				}
+					
+				
+				$('#loading-image').css('visibility','hidden');
+				$("div.navbar-on-center").find("#loading-image").css('visibility','hidden');
+			}});
+			return false;
+		}
+		
+		function CreateCharts() {
+			/*if (document.getElementById("sumdaycanvas") == null) {
+				return;
+			}*/
+			
+			$.ajax({url: "auswertung.json?auswertung=sum_tag", success: function(result) {
+				var ctx = document.getElementById("sumDayCanvas").getContext("2d");
+				new Chart(ctx).Line(result, {
+					responsive : true, 
+					//multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
+					legend: true,
+					inGraphDataShow: true
+					,inGraphDataTmpl: "<%=v3%>"
+					,yAxisLabel: 'Stunden'
+					,yAxisMinimumInterval: 1
+				});
+			}});
+			
+			$.ajax({url: "auswertung.json?auswertung=sum_monat", success: function(result) {
+				var ctx = document.getElementById("sumMonthCanvas").getContext("2d");
+				new Chart(ctx).Bar(result, {
+					responsive : true, 
+					//multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
+					//legend:true,maxLegendCols:5,legendBlockSize:15,legendFillColor:'rgba(0,255,255,0.00)',legendColorIndicatorStrokeWidth:1,legendPosX:-2,legendPosY:4,legendXPadding:0,legendYPadding:0,legendBorders:false,legendBordersWidth:1,legendBordersStyle:"solid",legendBordersColors:"rgba(102,102,102,1)",legendBordersSpaceBefore:5,legendBordersSpaceLeft:5,legendBordersSpaceRight:5,legendBordersSpaceAfter:5,legendSpaceBeforeText:5,legendSpaceLeftText:5,legendSpaceRightText:5,legendSpaceAfterText:5,legendSpaceBetweenBoxAndText:5,legendSpaceBetweenTextHorizontal:5,legendSpaceBetweenTextVertical:5,legendFontFamily:"'Open Sans'",legendFontStyle:"normal normal",legendFontColor:"rgba(0,0,0,1)",legendFontSize:15,
+					//legend: true,
+					inGraphDataShow:true,inGraphDataFontStyle:"normal bold",inGraphDataFontColor:"rgba(151,187,205,1.00)",inGraphDataFontSize:16,inGraphDataPaddingX:0,inGraphDataPaddingY:-5,inGraphDataAlign:"center",inGraphDataVAlign:"top",inGraphDataXPosition:2,inGraphDataYPosition:3,inGraphDataAnglePosition:2,inGraphDataRadiusPosition:2,inGraphDataRotate:0,inGraphDataPaddingAngle:0,inGraphDataPaddingRadius:0
+					//,  inGraphDataTmpl : "<%=v1+' '+v2+' '+v3+' '+v4+' '+v5+' '+v6+' '+v7+' '+v8+' '+v9+' '+v10+' '+v11+' '+v12+' '+v13%>"
+					,inGraphDataTmpl: "<%=v1+'\n'+v3+'h'%>"
+					,yAxisLabel: 'Stunden'
+					,yAxisMinimumInterval: 1
+				});
+			}});
+			
+			$.ajax({url: "auswertung.json?auswertung=avg_monat", success: function(result) {
+				var ctx = document.getElementById("avgMonthCanvas").getContext("2d");
+				new Chart(ctx).Bar(result, {
+					responsive : true, 
+					//multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
+					//legend:true,maxLegendCols:5,legendBlockSize:15,legendFillColor:'rgba(0,255,255,0.00)',legendColorIndicatorStrokeWidth:1,legendPosX:-2,legendPosY:4,legendXPadding:0,legendYPadding:0,legendBorders:false,legendBordersWidth:1,legendBordersStyle:"solid",legendBordersColors:"rgba(102,102,102,1)",legendBordersSpaceBefore:5,legendBordersSpaceLeft:5,legendBordersSpaceRight:5,legendBordersSpaceAfter:5,legendSpaceBeforeText:5,legendSpaceLeftText:5,legendSpaceRightText:5,legendSpaceAfterText:5,legendSpaceBetweenBoxAndText:5,legendSpaceBetweenTextHorizontal:5,legendSpaceBetweenTextVertical:5,legendFontFamily:"'Open Sans'",legendFontStyle:"normal normal",legendFontColor:"rgba(0,0,0,1)",legendFontSize:15,
+					//legend: true,
+					inGraphDataShow:true,inGraphDataFontStyle:"normal bold",inGraphDataFontColor:"rgba(151,187,205,1.00)",inGraphDataFontSize:16,inGraphDataPaddingX:0,inGraphDataPaddingY:-5,inGraphDataAlign:"center",inGraphDataVAlign:"top",inGraphDataXPosition:2,inGraphDataYPosition:3,inGraphDataAnglePosition:2,inGraphDataRadiusPosition:2,inGraphDataRotate:0,inGraphDataPaddingAngle:0,inGraphDataPaddingRadius:0
+					//,  inGraphDataTmpl : "<%=v1+' '+v2+' '+v3+' '+v4+' '+v5+' '+v6+' '+v7+' '+v8+' '+v9+' '+v10+' '+v11+' '+v12+' '+v13%>"
+					,inGraphDataTmpl: "<%=v1+'\n'+v3+'h'%>"
+					,yAxisLabel: 'Stunden'
+					,yAxisMinimumInterval: 1
+				});
+			}});
+		}
+	</script>
+  </body>
+</html>
